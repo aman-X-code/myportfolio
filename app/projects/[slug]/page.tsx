@@ -22,10 +22,11 @@ const projects = [
     timeline: "AUGUST 2024 - NOVEMBER 2024",
     images: ["/foodcourt/onef.png", "/foodcourt/onef2.png", "/foodcourt/onef3.png"],
     technologies: [
-      { name: "React", icon: "/tech-icons/react.svg" },
-      { name: "Next.js", icon: "/tech-icons/nextjs.svg" },
-      { name: "Three.js", icon: "/tech-icons/threejs.svg" },
-      { name: "GSAP", icon: "/tech-icons/gsap.svg" },
+      { name: "", icon: "/icons/react.svg" },
+      { name: "", icon: "/icons/next.svg" },
+      { name: "", icon: "/icons/Three.svg" },
+      { name: "", icon: "/icons/gsap.svg" },
+      { name: "", icon: "/icons/typescript.svg" },
     ],
     challenges: [
       "Handling concurrent slot bookings without conflicts or overlaps.",
@@ -52,10 +53,10 @@ const projects = [
     timeline: "JANUARY 2025",
     images: ["/calendar/two.png", "/calendar/twof.png", "/calendar/two2.png"],
     technologies: [
-      { name: "Vue.js", icon: "/tech-icons/vuejs.svg" },
-      { name: "D3.js", icon: "/tech-icons/d3js.svg" },
-      { name: "Node.js", icon: "/tech-icons/nodejs.svg" },
-      { name: "MongoDB", icon: "/tech-icons/mongodb.svg" },
+      { name: "", icon: "/icons/vue.svg" },
+      { name: "", icon: "/icons/typescript.svg" },
+      { name: "", icon: "/icons/node.svg" },
+      { name: "", icon: "/icons/tailw.png" },
     ],
     challenges: [
       "Integrating Google SSO and ensuring smooth user authentication across platforms.",
@@ -82,10 +83,10 @@ const projects = [
     timeline: "OCTOBER 2024 - NOVEMBER 2024",
     images: ["/metro/mm.png", "/metro/mm2.png"],
     technologies: [
-      { name: "React", icon: "/tech-icons/react.svg" },
-      { name: "Next.js", icon: "/tech-icons/nextjs.svg" },
-      { name: "Tailwind CSS", icon: "/tech-icons/tailwindcss.svg" },
-      { name: "Firebase", icon: "/tech-icons/firebase.svg" },
+      { name: "", icon: "/icons/react.svg" },
+      { name: "", icon: "/icons/next.svg" },
+      { name: "", icon: "/icons/tailw.png" },
+      { name: "", icon: "/icons/node.svg" },
     ],
     challenges: [
       "Handling large metro networks and ensuring fast route calculation.",
@@ -112,10 +113,10 @@ const projects = [
     timeline: "OCTOBER 2024 - NOVEMBER 2024",
     images: ["/poem/th.png", "/poem/th2.jpg"],
     technologies: [
-      { name: "React", icon: "/tech-icons/react.svg" },
-      { name: "Redux", icon: "/tech-icons/redux.svg" },
-      { name: "Node.js", icon: "/tech-icons/nodejs.svg" },
-      { name: "PostgreSQL", icon: "/tech-icons/postgresql.svg" },
+      { name: "", icon: "/icons/react.svg" },
+      { name: "", icon: "/icons/typescript.svg" },
+      { name: "", icon: "/icons/node.svg" },
+      { name: "", icon: "/icons/tailw.png" },
     ],
     challenges: [
       "Analyzing the emotional tone of the generated poem accurately.",
@@ -143,9 +144,9 @@ const projects = [
     timeline: "January 2024 - February 2024",
     images: ["/portfolio/pp.png", "/portfolio/pp2.png"],
     technologies: [
-      { name: "HTML", icon: "/tech-icons/html.svg" },
-      { name: "CSS", icon: "/tech-icons/css.svg" },
-      { name: "JavaScript", icon: "/tech-icons/javascript.svg" },
+      { name: "", icon: "/icons/html.svg" },
+      { name: "", icon: "/icons/css.svg" },
+      { name: "", icon: "/icons/js.svg" },
     ],
     challenges: [
       "Creating a visually appealing and user-friendly portfolio that effectively showcases my skills and experience.",
@@ -171,10 +172,10 @@ const projects = [
     timeline: "SEPTEMBER 2024 - OCTOBER 2024",
     images: ["/kanban/ka.png", "/kanban/ka2.png"],
     technologies: [
-      { name: "PHP", icon: "/tech-icons/php.svg" },
-      { name: "MySQL", icon: "/tech-icons/mysql.svg" },
-      { name: "WordPress", icon: "/tech-icons/wordpress.svg" },
-      { name: "Yoast SEO", icon: "/tech-icons/yoastseo.svg" },
+      { name: "", icon: "/icons/node.svg" },
+      { name: "", icon: "/icons/js.svg" },
+      { name: "", icon: "/icons/react.svg" },
+      { name: "", icon: "/icons/tailw.png" },
     ],
     challenges: [
       "Managing real-time collaboration between multiple users on the same board.",
@@ -201,10 +202,10 @@ const projects = [
     images: ["/imu/leg.jpg", "/imu/arm.jpg", "/imu/g.png"],
     video: "",
     technologies: [
-      { name: "Arduino", icon: "/tech-icons/arduino.svg" },
-      { name: "ESP32", icon: "/tech-icons/esp32.svg" },
-      { name: "Raspberry Pi", icon: "/tech-icons/raspberrypi.svg" },
-      { name: "Python", icon: "/tech-icons/python.svg" },
+      { name: "", icon: "/icons/arduino.svg" },
+      { name: "", icon: "/icons/esp.svg" },
+      { name: "", icon: "/icons/rpi.svg" },
+      { name: "", icon: "/icons/c.svg" },
     ],
     challenges: [
       "Lack of real-time monitoring for patient recovery progress.",
@@ -230,10 +231,9 @@ const projects = [
     timeline: "FEBRUARY 2025",
     images: ["/hand/image.png", "/hand/ff.jpg", "/hand/dd .png"],
     technologies: [
-      { name: "Home Assistant", icon: "/tech-icons/homeassistant.svg" },
-      { name: "Node-RED", icon: "/tech-icons/nodered.svg" },
-      { name: "MQTT", icon: "/tech-icons/mqtt.svg" },
-      { name: "Zigbee", icon: "/tech-icons/zigbee.svg" },
+      { name: "", icon: "/icons/home.svg" },
+      { name: "", icon: "/icons/nodered.svg" },
+      { name: "", icon: "/icons/mqtt.svg" },
     ],
     challenges: [
       "The problem statement for developing a glove that translates sign language into text and speech",
@@ -301,13 +301,13 @@ export default function ProjectShowcase() {
             <h3 className="text-xl font-semibold mb-2">Technologies Used</h3>
             <div className="flex flex-wrap gap-4 mb-4">
               {project.technologies.map((tech, index) => (
-                <div key={index} className="flex items-center bg-gray-200 dark:bg-gray-700 rounded-full px-3 py-1">
+                <div key={index} className="flex items-center rounded-full px-3 py-1">
                   <Image
-                    src={tech.icon || "/placeholder.svg"}
-                    alt={tech.name}
-                    width={20}
-                    height={20}
-                    className="mr-2"
+                  src={tech.icon || "/placeholder.svg"}
+                  alt={tech.name}
+                  width={20}
+                  height={20}
+                  className="mr-2"
                   />
                   <span>{tech.name}</span>
                 </div>
