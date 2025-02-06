@@ -43,4 +43,4 @@ This project is licensed under the MIT License.
 
 ## 📬 Contact
 
-For any inquiries, please reach out to me at [your-email@example.com](mailto:your-email@example.com).
+For any inquiries, please reach out to me at [aamankhanna1112@gmail.com](mailto:aamankhanna1112@gmail.com).
