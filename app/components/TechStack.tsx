@@ -18,6 +18,11 @@ const technologies = [
     customClass: "bg-black",
   },
   {
+    name: "JavaScript",
+    icon: "/icons/js.svg",
+    customClass: "bg-black",
+  },
+  {
     name: "Framer Motion",
     icon: "/icons/framer.svg",
     customClass: "bg-black",
@@ -77,8 +82,8 @@ export default function TechStack() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-4">
-          {technologies.slice(0, 3).map((tech, index) => (
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-4">
+          {technologies.slice(0, 4).map((tech, index) => (
             <div
               key={index}
               className={`aspect-square rounded-2xl flex items-center justify-center transition-all duration-300 border ${
@@ -101,8 +106,8 @@ export default function TechStack() {
             </div>
           ))}
         </div>
-        <div className="grid grid-cols-3 sm:grid-cols-6 gap-4">
-          {technologies.slice(3).map((tech, index) => (
+        <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
+          {technologies.slice(4).map((tech, index) => (
             <div
               key={index}
               className={`aspect-square rounded-2xl flex items-center justify-center transition-all duration-300 border ${
