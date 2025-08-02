@@ -106,7 +106,7 @@ export default function TechStack() {
             </div>
           ))}
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
           {technologies.slice(4).map((tech, index) => (
             <div
               key={index}
