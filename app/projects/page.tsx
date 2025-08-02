@@ -18,6 +18,22 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "STUDENT MANAGEMENT PWA",
+    slug: "pwa",
+    category: "WEB APPLICATION",
+    description: "Modern education PWA to streamline offline student management of grades, schedules, and productivity.",
+    image: "/pwa/image.png",
+    liveUrl: "https://musical-gecko-c9f9eb.netlify.app/",
+  },
+  {
+    title: "AI-TASK MANAGER",
+    slug: "AI-Task",
+    category: "WEB APPLICATION",
+    description: "AI-powered task management system with intelligent categorization and dynamic prioritization.",
+    image: "/aitask/home.png",
+    liveUrl: "https://ai-sable-omega.vercel.app/",
+  },
+  {
     title: "FOOD COURT MANAGER",
     slug: "foodcourt",
     category: "WEB APPLICATION",

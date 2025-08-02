@@ -143,22 +143,23 @@ export default function AboutMe() {
           <div className="flex items-center justify-between mb-4">
             <h1 className="text-6xl font-bold relative">About Me</h1>
             <Link
-              href="/path-to-your-resume.pdf"
-              download
+              href="/AmanKhannaResume.pdf"
               className={`cursor-pointer flex justify-between px-3 py-2 rounded-full tracking-wider shadow-xl hover:scale-105 duration-500 hover:ring-1 font-mono w-[150px] ${
-                darkMode ? "bg-white text-black hover:bg-gray-200" : "bg-gray-800 text-white hover:bg-gray-900"
+              darkMode ? "bg-white text-black hover:bg-gray-200" : "bg-gray-800 text-white hover:bg-gray-900"
               }`}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Resume
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="2"
-                stroke="currentColor"
-                className="w-5 h-5 animate-bounce"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="2"
+              stroke="currentColor"
+              className="w-5 h-5 animate-bounce"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3"></path>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3"></path>
               </svg>
             </Link>
           </div>

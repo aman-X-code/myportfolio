@@ -161,7 +161,7 @@ export default function FeaturedProject() {
     >
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 md:mb-0">FEATURED PROJECT</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 md:mb-0">WORK</h2>
           <Link
             href="/projects"
             className={`group flex items-center space-x-2 ${darkMode ? "text-white" : "text-black"} hover:opacity-80 transition-opacity duration-300`}

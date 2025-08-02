@@ -1,16 +1,85 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { useParams, useRouter } from "next/navigation"
-import Image from "next/image"
-import Link from "next/link"
-import { ArrowLeft, ExternalLink, Github } from "lucide-react"
-import { useDarkMode } from "@/app/context/DarkModeContext"
-import { motion } from "framer-motion"
+import { useState, useEffect } from "react";
+import { useParams, useRouter } from "next/navigation";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowLeft, ExternalLink, Github } from "lucide-react";
+import { useDarkMode } from "@/app/context/DarkModeContext";
+import { motion } from "framer-motion";
 
 // This should be moved to a separate file and imported
 const projects = [
   // Add more projects here...
+  {
+    title: "EduHub - Student Management PWA",
+    slug: "pwa",
+    category: "WEB APPLICATION",
+    description:
+      "A progressive web application for education portals, offering offline student management with AI-powered assistance, real-time notifications, and a modern, responsive UI.",
+    fullDescription:
+      "EduHub is a feature-rich PWA built with React, TypeScript, Vite, and Tailwind CSS, delivering unified tools for students to manage schedules, assignments, grades, and productivity in one platform. Integrated Gemini AI provides contextual study support, while a custom service worker enables offline access and push notifications. Security and scalability are ensured via backend API proxying and a modular, maintainable codebase.",
+    timeline: "July 2025",
+    images: [
+      "/pwa/timer.png",
+      "/pwa/tt.png",
+      "/pwa/ai.png",
+    ],
+    technologies: [
+      { name: "React", icon: "/icons/react.svg" },
+      { name: "TypeScript", icon: "/icons/typescript.svg" },
+      { name: "Gemini API", icon: "/icons/gemini.png" },
+      { name: "Tailwind CSS", icon: "/icons/tailw.png" },
+      { name: "Vite", icon: "/icons/vite.png" },
+      { name: "Node.js", icon: "/icons/node.svg" },
+    ],
+    challenges: [
+      "Building a robust PWA architecture for reliable offline access and installability across devices.",
+      "Implementing a real-time, user-friendly notification system for assignment alerts and updates.",
+      "Ensuring seamless synchronization and cache management between offline and online states.",
+    ],
+    solutions: [
+      "Engineered a custom service worker and PWA manifest to enable advanced offline caching, auto-updates, and mobile/desktop installation.",
+      "Integrated the Notification API and push system through the service worker, allowing students to receive timely alerts even when the app is closed.",
+      "Utilized dynamic cache management and user prompts to maintain data accuracy and smooth transitions between connectivity states.",
+    ],
+    outcomes:
+      "Delivered a robust, installable education portal unifying grades, assignments, and smart AI-driven help—enhancing productivity and accessibility for students.",
+    liveUrl: "https://musical-gecko-c9f9eb.netlify.app/",
+    githubUrl: "https://github.com/aman-X-code/StudentApp",
+  },
+  {
+    title: "AI TASK MANAGER",
+    slug: "AI-Task",
+    category: "WEB APPLICATION",
+    description:
+      "An intelligent task manager leveraging AI to prioritize tasks, enhance productivity, and streamline daily workflows.",
+    fullDescription:
+      "A smart AI-powered task management tool that uses natural language processing to understand user inputs, intelligently categorize tasks, and suggest priorities. Built with React, TypeScript, and OpenAI API integration for real-time intelligence.",
+    timeline: "March 2025",
+    images: ["/aitask/image.png", "/aitask/dash.png", "/aitask/ai.png"],
+    technologies: [
+      { name: "React", icon: "/icons/react.svg" },
+      { name: "TypeScript", icon: "/icons/typescript.svg" },
+      { name: "Gemini API", icon: "/icons/gemini.png" },
+      { name: "Tailwind CSS", icon: "/icons/tailw.png" },
+      { name: "Vite", icon: "/icons/vite.png" },
+    ],
+    challenges: [
+      "Interpreting vague or unstructured task inputs through natural language.",
+      "Ensuring accurate task prioritization using limited user context.",
+      "Maintaining responsiveness while processing tasks through an AI API.",
+    ],
+    solutions: [
+      "Integrated OpenAI's language model for semantic understanding of tasks.",
+      "Implemented rule-based and AI-enhanced priority assignment logic.",
+      "Used debounce and async processing to maintain fast UI performance.",
+    ],
+    outcomes:
+      "Created a minimal, intelligent task manager that enhances productivity through AI-driven task suggestions and prioritization.",
+    liveUrl: "https://ai-task-aman.vercel.app/",
+    githubUrl: "https://github.com/aman-X-code/AI-Task",
+  },
   {
     title: "FOOD COURT MANAGER",
     slug: "foodcourt",
@@ -20,7 +89,11 @@ const projects = [
     fullDescription:
       "A seamless college food court management system with time slot selection, multiple food options, and integrated money management. Built with React and TypeScript, deployed on Vercel for efficient user experience.",
     timeline: "AUGUST 2024 - NOVEMBER 2024",
-    images: ["/foodcourt/onef.png", "/foodcourt/onef2.png", "/foodcourt/onef3.png"],
+    images: [
+      "/foodcourt/onef.png",
+      "/foodcourt/onef2.png",
+      "/foodcourt/onef3.png",
+    ],
     technologies: [
       { name: "", icon: "/icons/react.svg" },
       { name: "", icon: "/icons/next.svg" },
@@ -38,9 +111,10 @@ const projects = [
       "Optimized database indexing and caching for faster query performance.",
       "Implemented secure OAuth authentication and encrypted transactions.",
     ],
-    outcomes: "Delivered a fast, secure, and seamless food court management system with real-time booking, smooth transactions, and an intuitive user experience.",
+    outcomes:
+      "Delivered a fast, secure, and seamless food court management system with real-time booking, smooth transactions, and an intuitive user experience.",
     liveUrl: "https://college-food-court.vercel.app/",
-    githubUrl: "https://github.com/example/poweroflife",
+    githubUrl: "https://github.com/aman-X-code/Food-Court",
   },
   {
     title: "CALENDAR SYNC",
@@ -70,7 +144,7 @@ const projects = [
     ],
     outcomes: "Helped users to reduce time in managing the tasks.",
     liveUrl: "https://calendarsync-opal.vercel.app/",
-    githubUrl: "https://github.com/example/handleyourelectricity",
+    githubUrl: "https://github.com/aman-X-code/Calendar-Sync",
   },
   {
     title: "METRO ROUTE WIZARD",
@@ -98,9 +172,10 @@ const projects = [
       "Used weighted shortest path algorithms to prioritize both interchanges and cost effectively.",
       "Developed an intuitive UI with filters and clear visualizations to make route selection easy for users.",
     ],
-    outcomes: "The Metro Route Planner efficiently calculates optimal routes, balancing interchanges and cost using advanced algorithms, ensuring fast and accurate results even for large metro networks. It provides users with intuitive and easy-to-use route options, simplifying the travel planning process while saving time and money.",
+    outcomes:
+      "The Metro Route Planner efficiently calculates optimal routes, balancing interchanges and cost using advanced algorithms, ensuring fast and accurate results even for large metro networks. It provides users with intuitive and easy-to-use route options, simplifying the travel planning process while saving time and money.",
     liveUrl: "https://metro-fawn.vercel.app/",
-    githubUrl: "https://github.com/example/socialmediadashboard",
+    githubUrl: "https://github.com/aman-X-code/Metro-Route-Wizard",
   },
   {
     title: "AI POEM GENERATOR",
@@ -131,7 +206,7 @@ const projects = [
     outcomes:
       "The AI poem generator accurately analyzes emotions from user-input words, delivering poems with real-time generation and seamless performance. It enhances the user experience by matching emotions with animated emojis, making the interaction dynamic and engaging.",
     liveUrl: "https://poem-qk18.vercel.app/",
-    githubUrl: "https://github.com/example/ecommerce",
+    githubUrl: "https://github.com/aman-X-code/AIPoem",
   },
   {
     title: "PORTFOLIO SHOWCASE",
@@ -160,15 +235,16 @@ const projects = [
     ],
     outcomes: "Improved user experience and increased visibility of my work.",
     liveUrl: "https://aman-x-code.github.io/Portfolio/",
-    githubUrl: "https://github.com/example/portfolio",
+    githubUrl: "https://github.com/aman-X-code/Portfolio",
   },
   {
     title: "KANBAN BOARD",
     slug: "kanban",
     category: "WEB APPLICATION",
-    description: "A powerful content management system tailored for bloggers with advanced SEO optimization features.",
+    description:
+      "A powerful content management system tailored for bloggers with advanced SEO optimization features.",
     fullDescription:
-      "The Kanban Board application is a project management tool designed to help users visually organize and track tasks through customizable columns and cards. It allows users to create, update, and move tasks between stages like \"To Do,\" \"In Progress,\" and \"Completed,\" providing a clear overview of project status. With features like drag-and-drop functionality, task prioritization, and real-time collaboration, the app enhances productivity and streamlines workflow management.",
+      'The Kanban Board application is a project management tool designed to help users visually organize and track tasks through customizable columns and cards. It allows users to create, update, and move tasks between stages like "To Do," "In Progress," and "Completed," providing a clear overview of project status. With features like drag-and-drop functionality, task prioritization, and real-time collaboration, the app enhances productivity and streamlines workflow management.',
     timeline: "SEPTEMBER 2024 - OCTOBER 2024",
     images: ["/kanban/ka.png", "/kanban/ka2.png"],
     technologies: [
@@ -187,15 +263,17 @@ const projects = [
       "Optimized front-end code and used libraries like React DnD for smooth drag-and-drop interactions.",
       "Designed a flexible column and card system that allows users to customize layouts based on their project requirements.",
     ],
-    outcomes: "The Kanban Board app enables real-time collaboration with seamless synchronization across users, offering smooth drag-and-drop functionality for efficient task management. It provides a flexible and customizable task management system, catering to various project needs and enhancing productivity.",
+    outcomes:
+      "The Kanban Board app enables real-time collaboration with seamless synchronization across users, offering smooth drag-and-drop functionality for efficient task management. It provides a flexible and customizable task management system, catering to various project needs and enhancing productivity.",
     liveUrl: "https://kanban-board-pi-rust.vercel.app/",
-    githubUrl: "https://github.com/example/blogcms",
+    githubUrl: "https://github.com/aman-X-code/Kanban-Board",
   },
   {
     title: "Digital Twin System for Real-Time Telerehabilitation",
     slug: "digital-twin",
     category: "PATENT & PROTOTYPE",
-    description: "A groundbreaking smart home device that revolutionizes energy efficiency and user comfort.",
+    description:
+      "A groundbreaking smart home device that revolutionizes energy efficiency and user comfort.",
     fullDescription:
       "This aims to address the growing need for effective and remote rehabilitation solutions. The system leverages IoT-enabled sensors like ESP32 and MPU6050 IMUs to capture real-time motion data of major joints, such as the knee and ankle, during rehabilitation exercises.",
     timeline: "AUGUST 2024 -  FEBRUARY 2025",
@@ -217,15 +295,18 @@ const projects = [
       "Managing and analyzing large volumes of real-time data.",
       "Providing real-time feedback to patients and therapists.",
     ],
-    outcomes: " This innovation bridges the gap between traditional rehabilitation and modern IoT technologies, paving the way for scalable and efficient remote healthcare solutions.",
+    outcomes:
+      " This innovation bridges the gap between traditional rehabilitation and modern IoT technologies, paving the way for scalable and efficient remote healthcare solutions.",
     liveUrl: "https://innovgadget.example.com",
     githubUrl: "https://github.com/example/innovgadget",
   },
   {
-    title: "Smart Glove for Translating Sign Language into Text and Enabling Home Automation Control",
+    title:
+      "Smart Glove for Translating Sign Language into Text and Enabling Home Automation Control",
     slug: "smart-home-system",
     category: "PATENT & PROTOTYPE",
-    description: "An integrated system that seamlessly connects and controls all aspects of a modern smart home.",
+    description:
+      "An integrated system that seamlessly connects and controls all aspects of a modern smart home.",
     fullDescription:
       "The global mute community faces significant communication barriers due to the limited understanding of sign language among the general population. This project aims to bridge this gap by developing a smart glove that translates sign language into text, making communication more accessible for mute individuals. Built on an embedded system, the device also integrates non-gesture sensors to enable home automation, allowing users to control appliances such as lights and fans. ",
     timeline: "FEBRUARY 2025",
@@ -245,36 +326,45 @@ const projects = [
       "Implemented standardized communication protocols for seamless integration.",
       "Developed comprehensive monitoring and error handling mechanisms.",
     ],
-    outcomes: "Developed a robust and scalable smart home system that improves home automation and energy efficiency.",
+    outcomes:
+      "Developed a robust and scalable smart home system that improves home automation and energy efficiency.",
     liveUrl: "https://smarthome.example.com",
     githubUrl: "https://github.com/example/smarthome",
   },
-]
+];
 
 export default function ProjectShowcase() {
-  const params = useParams()
-  const router = useRouter()
-  const { darkMode } = useDarkMode()
-  const [project, setProject] = useState<(typeof projects)[0] | null>(null)
-  const [isLoading, setIsLoading] = useState(true)
+  const params = useParams();
+  const router = useRouter();
+  const { darkMode } = useDarkMode();
+  const [project, setProject] = useState<(typeof projects)[0] | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const foundProject = projects.find((p) => p.slug === params.slug)
+    const foundProject = projects.find((p) => p.slug === params.slug);
     if (foundProject) {
-      setProject(foundProject)
-      setIsLoading(false)
+      setProject(foundProject);
+      setIsLoading(false);
     } else {
-      router.push("/404")
+      router.push("/404");
     }
-  }, [params.slug, router])
+  }, [params.slug, router]);
 
-  if (isLoading) return null
-  if (!project) return null
+  if (isLoading) return null;
+  if (!project) return null;
 
   return (
-    <div className={`min-h-screen ${darkMode ? "bg-black text-white" : "bg-gray-100 text-gray-900"}`}>
+    <div
+      className={`min-h-screen ${
+        darkMode ? "bg-black text-white" : "bg-gray-100 text-gray-900"
+      }`}
+    >
       <div className="container mx-auto px-4 py-12">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
           <Link
             href="/projects"
             className="inline-flex items-center text-blue-500 hover:text-blue-600 transition-colors mb-8"
@@ -301,13 +391,16 @@ export default function ProjectShowcase() {
             <h3 className="text-xl font-semibold mb-2">Technologies Used</h3>
             <div className="flex flex-wrap gap-4 mb-4">
               {project.technologies.map((tech, index) => (
-                <div key={index} className="flex items-center rounded-full px-3 py-1">
+                <div
+                  key={index}
+                  className="flex items-center rounded-full px-3 py-1"
+                >
                   <Image
-                  src={tech.icon || "/placeholder.svg"}
-                  alt={tech.name}
-                  width={20}
-                  height={20}
-                  className="mr-2"
+                    src={tech.icon || "/placeholder.svg"}
+                    alt={tech.name}
+                    width={20}
+                    height={20}
+                    className="mr-2"
                   />
                   <span>{tech.name}</span>
                 </div>
@@ -374,7 +467,9 @@ export default function ProjectShowcase() {
             target="_blank"
             rel="noopener noreferrer"
             className={`inline-flex items-center px-6 py-3 rounded-full text-lg font-semibold transition-colors ${
-              darkMode ? "bg-white/20 hover:bg-white/30 text-white" : "bg-blue-500 hover:bg-blue-600 text-white"
+              darkMode
+                ? "bg-white/20 hover:bg-white/30 text-white"
+                : "bg-blue-500 hover:bg-blue-600 text-white"
             }`}
           >
             View Live Demo
@@ -385,7 +480,9 @@ export default function ProjectShowcase() {
             target="_blank"
             rel="noopener noreferrer"
             className={`inline-flex items-center px-6 py-3 rounded-full text-lg font-semibold transition-colors ${
-              darkMode ? "bg-white/10 hover:bg-white/20 text-white" : "bg-gray-200 hover:bg-gray-300 text-gray-900"
+              darkMode
+                ? "bg-white/10 hover:bg-white/20 text-white"
+                : "bg-gray-200 hover:bg-gray-300 text-gray-900"
             }`}
           >
             View on GitHub
@@ -394,6 +491,5 @@ export default function ProjectShowcase() {
         </motion.div>
       </div>
     </div>
-  )
+  );
 }
-
