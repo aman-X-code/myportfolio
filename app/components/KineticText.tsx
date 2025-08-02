@@ -21,7 +21,7 @@ export default function KineticText({
   return (
     <p
       ref={container}
-      className={`flex flex-wrap text-[148.96px] font-bold leading-none ${className}`}
+      className={`flex flex-wrap text-6xl md:text-8xl lg:text-[148.96px] font-bold leading-none ${className}`}
     >
       {words.map((word, i) => {
         const start = i / words.length
