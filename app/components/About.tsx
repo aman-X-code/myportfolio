@@ -60,13 +60,13 @@ export default function About() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           <div className={`border-2 ${darkMode ? "border-gray-800" : "border-gray-200"} p-6 rounded-lg`}>
             <h3 className="text-3xl md:text-4xl font-bold mb-2">
-              {isVisible && <CountUp end={18} duration={3} suffix="+" />}
+              {isVisible && <CountUp end={18} duration={5} suffix="+" />}
             </h3>
             <p className="text-sm md:text-base">SUCCESS PROJECTS</p>
           </div>
           <div className={`border-2 ${darkMode ? "border-gray-800" : "border-gray-200"} p-6 rounded-lg`}>
             <h3 className="text-3xl md:text-4xl font-bold mb-2">
-              {isVisible && <CountUp end={14} duration={3} suffix="+" />}
+              {isVisible && <CountUp end={14} duration={5} suffix="+" />}
             </h3>
             <p className="text-sm md:text-base">WEBSITES DEPLOYED</p>
           </div>
