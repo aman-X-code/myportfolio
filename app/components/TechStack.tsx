@@ -7,27 +7,11 @@ import KineticText from "./KineticText"
 import { VercelLogo } from "./VercelLogo"
 
 const technologies = [
-  {
-    name: "React",
-    icon: "/icons/react.svg",
-    customClass: "",
-  },
+  { name: "React", icon: "/icons/react.svg", customClass: "" },
   { name: "Next.js", icon: "/icons/next.svg", customClass: "" },
-  {
-    name: "TypeScript",
-    icon: "/icons/typescript.svg",
-    customClass: "bg-black",
-  },
-  {
-    name: "JavaScript",
-    icon: "/icons/js.svg",
-    customClass: "bg-black",
-  },
-  {
-    name: "Framer Motion",
-    icon: "/icons/framer.svg",
-    customClass: "bg-black",
-  },
+  { name: "TypeScript", icon: "/icons/typescript.svg", customClass: "bg-black" },
+  { name: "JavaScript", icon: "/icons/js.svg", customClass: "bg-black" },
+  { name: "Framer Motion", icon: "/icons/framer.svg", customClass: "bg-black" },
   { name: "Tailwind CSS", icon: "/icons/tailwind.svg", customClass: "" },
   { name: "Shadcn UI", icon: "/icons/shadcn.svg", customClass: "" },
   { name: "Vercel", icon: "/vercel.svg", customClass: "" },
@@ -40,6 +24,11 @@ export default function TechStack() {
   const sectionRef = useRef(null)
   const { darkMode } = useDarkMode()
 
+  // Icons that need inversion in dark mode
+  const shouldInvertInDarkMode = (name: string) => {
+    return ["Tailwind CSS", "Next.js", "Shadcn UI", "Framer Motion"].includes(name)
+  }
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -48,22 +37,14 @@ export default function TechStack() {
           observer.unobserve(entry.target)
         }
       },
-      {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.1,
-      },
+      { root: null, rootMargin: "0px", threshold: 0.1 }
     )
 
     const currentRef = sectionRef.current
-    if (currentRef) {
-      observer.observe(currentRef)
-    }
+    if (currentRef) observer.observe(currentRef)
 
     return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef)
-      }
+      if (currentRef) observer.unobserve(currentRef)
     }
   }, [])
 
@@ -87,9 +68,7 @@ export default function TechStack() {
           {technologies.slice(0, 4).map((tech, index) => (
             <div
               key={index}
-              className={`aspect-square rounded-2xl flex items-center justify-center transition-all duration-300 border ${
-                tech.customClass
-              } ${
+              className={`aspect-square rounded-2xl flex items-center justify-center transition-all duration-300 border ${tech.customClass} ${
                 darkMode
                   ? "bg-white/5 backdrop-blur-md shadow-lg border-white/10"
                   : "bg-white/20 backdrop-blur-md shadow-lg border-white/30"
@@ -109,20 +88,19 @@ export default function TechStack() {
                   width={96}
                   height={96}
                   className={`object-contain transition-all duration-300 ${
-                    darkMode ? "invert" : ""
+                    darkMode && shouldInvertInDarkMode(tech.name) ? "invert" : ""
                   }`}
                 />
               )}
             </div>
           ))}
         </div>
+
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
           {technologies.slice(4).map((tech, index) => (
             <div
               key={index}
-              className={`aspect-square rounded-2xl flex items-center justify-center transition-all duration-300 border ${
-                tech.customClass
-              } ${
+              className={`aspect-square rounded-2xl flex items-center justify-center transition-all duration-300 border ${tech.customClass} ${
                 darkMode
                   ? "bg-white/5 backdrop-blur-md shadow-lg border-white/10"
                   : "bg-white/20 backdrop-blur-md shadow-lg border-white/30"
@@ -142,7 +120,7 @@ export default function TechStack() {
                   width={64}
                   height={64}
                   className={`object-contain transition-all duration-300 ${
-                    darkMode ? "invert" : ""
+                    darkMode && shouldInvertInDarkMode(tech.name) ? "invert" : ""
                   }`}
                 />
               )}
