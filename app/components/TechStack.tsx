@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react"
 import { useDarkMode } from "../context/DarkModeContext"
 import Image from "next/image"
 import KineticText from "./KineticText"
+import { VercelLogo } from "./VercelLogo"
 
 const technologies = [
   {
@@ -94,15 +95,24 @@ export default function TechStack() {
                   : "bg-white/20 backdrop-blur-md shadow-lg border-white/30"
               }`}
             >
-              <Image
-                src={tech.icon}
-                alt={tech.name}
-                width={96}
-                height={96}
-                className={`object-contain transition-all duration-300 ${
-                  darkMode ? "invert" : ""
-                } ${tech.name === "Vercel" && !darkMode ? "invert" : ""}`}
-              />
+              {tech.name === "Vercel" ? (
+                <VercelLogo
+                  height={96}
+                  className={`transition-all duration-300 ${
+                    darkMode ? "text-white" : "text-black"
+                  }`}
+                />
+              ) : (
+                <Image
+                  src={tech.icon}
+                  alt={tech.name}
+                  width={96}
+                  height={96}
+                  className={`object-contain transition-all duration-300 ${
+                    darkMode ? "invert" : ""
+                  }`}
+                />
+              )}
             </div>
           ))}
         </div>
@@ -118,15 +128,24 @@ export default function TechStack() {
                   : "bg-white/20 backdrop-blur-md shadow-lg border-white/30"
               }`}
             >
-              <Image
-                src={tech.icon}
-                alt={tech.name}
-                width={64}
-                height={64}
-                className={`object-contain transition-all duration-300 ${
-                  darkMode ? "invert" : ""
-                } ${tech.name === "Vercel" && !darkMode ? "invert" : ""}`}
-              />
+              {tech.name === "Vercel" ? (
+                <VercelLogo
+                  height={64}
+                  className={`transition-all duration-300 ${
+                    darkMode ? "text-white" : "text-black"
+                  }`}
+                />
+              ) : (
+                <Image
+                  src={tech.icon}
+                  alt={tech.name}
+                  width={64}
+                  height={64}
+                  className={`object-contain transition-all duration-300 ${
+                    darkMode ? "invert" : ""
+                  }`}
+                />
+              )}
             </div>
           ))}
         </div>
