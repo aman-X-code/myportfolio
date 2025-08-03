@@ -101,7 +101,7 @@ export default function TechStack() {
                 height={96}
                 className={`object-contain transition-all duration-300 ${
                   darkMode ? "invert" : ""
-                } ${tech.name === "Vercel" ? "dark:invert-0 invert" : ""}`}
+                } ${tech.name === "Vercel" && !darkMode ? "invert" : ""}`}
               />
             </div>
           ))}
@@ -125,7 +125,7 @@ export default function TechStack() {
                 height={64}
                 className={`object-contain transition-all duration-300 ${
                   darkMode ? "invert" : ""
-                } ${tech.name === "Vercel" ? "dark:invert-0 invert" : ""}`}
+                } ${tech.name === "Vercel" && !darkMode ? "invert" : ""}`}
               />
             </div>
           ))}
