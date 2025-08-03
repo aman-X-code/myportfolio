@@ -100,8 +100,8 @@ export default function TechStack() {
                 width={96}
                 height={96}
                 className={`object-contain transition-all duration-300 ${
-                  tech.name === "Framer Motion" ? "invert-0" : ""
-                }`}
+                  darkMode ? "invert" : ""
+                } ${tech.name === "Framer Motion" ? "invert-0" : ""}`}
               />
             </div>
           ))}
@@ -124,8 +124,8 @@ export default function TechStack() {
                 width={64}
                 height={64}
                 className={`object-contain transition-all duration-300 ${
-                  tech.name === "Framer Motion" ? "invert-0" : ""
-                }`}
+                  darkMode ? "invert" : ""
+                } ${tech.name === "Framer Motion" ? "invert-0" : ""}`}
               />
             </div>
           ))}
