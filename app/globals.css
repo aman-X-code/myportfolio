@@ -309,6 +309,3 @@ body {
   }
 }
 
-.dark .orange-filter {
-  filter: invert(50%) sepia(100%) saturate(200%) hue-rotate(-20deg);
-}

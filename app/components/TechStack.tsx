@@ -100,13 +100,8 @@ export default function TechStack() {
                 width={96}
                 height={96}
                 className={`object-contain transition-all duration-300 ${
-                  darkMode && tech.name !== "Vercel" ? "invert" : ""
-                } ${
-                  darkMode &&
-                  (tech.name === "React" || tech.name === "TypeScript")
-                    ? "orange-filter"
-                    : ""
-                }`}
+                  darkMode ? "invert" : ""
+                } ${tech.name === "Vercel" ? "dark:invert-0 invert" : ""}`}
               />
             </div>
           ))}
@@ -129,13 +124,8 @@ export default function TechStack() {
                 width={64}
                 height={64}
                 className={`object-contain transition-all duration-300 ${
-                  darkMode && tech.name !== "Vercel" ? "invert" : ""
-                } ${
-                  darkMode &&
-                  (tech.name === "React" || tech.name === "TypeScript")
-                    ? "orange-filter"
-                    : ""
-                }`}
+                  darkMode ? "invert" : ""
+                } ${tech.name === "Vercel" ? "dark:invert-0 invert" : ""}`}
               />
             </div>
           ))}
